@@ -1,0 +1,54 @@
+<body is="dmx-app" id="ttsia">
+    <div class="container">
+        <div class="row">
+            <form id="formAudio" is="dmx-serverconnect-form" method="post" action="/api/IA-Conversacional/tts-openai">
+                <div class="row">
+                    <div class="col-10">
+                        <input id="text1" name="text" type="text" class="form-control">
+                    </div>
+                    <div class="col align-self-stretch text-end">
+                        <button id="btn1" class="btn btn-primary" dmx-on:click="run({run:{outputType:'text',action:`formAudio.submit();textarea.setValue(sc_audio.data.api.data)`}})" data-bs-toggle="button">Button</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <audio id="audioElement" controls></audio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea id="textarea" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function playAudio() {
+        console.log('Função playAudio foi chamada');
+        // Verifica se há dados disponíveis no sc_audio.data
+        if (sc_audio && sc_audio.data && sc_audio.data.api && sc_audio.data.api.data) {
+            console.log('Dados de áudio encontrados:', sc_audio.data.api.data);
+            // Converte os dados binários em um Blob de áudio
+            var audioBlob = new Blob([sc_audio.data.api.data], { type: 'audio/mpeg' });
+            // Gera uma URL a partir do Blob para o elemento de áudio
+            var audioUrl = URL.createObjectURL(audioBlob);
+            console.log('URL de áudio criada:', audioUrl);
+            // Define o src do elemento de áudio com o URL gerado
+            document.getElementById('audioElement').src = audioUrl;
+            // Reproduz o áudio automaticamente
+            document.getElementById('audioElement').play();
+        } else {
+            console.error("Os dados de áudio não estão disponíveis ou estão em um formato inesperado.");
+        }
+    }
+
+    // Chama a função playAudio() após o formulário ser enviado e os dados serem recebidos
+    document.getElementById('formAudio').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+        console.log('Formulário enviado, chamando playAudio');
+        playAudio(); // Chama a função para processar o áudio
+    });
+</script>

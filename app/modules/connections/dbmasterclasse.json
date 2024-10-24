@@ -1,0 +1,20 @@
+{
+  "name": "dbmasterclasse",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "mssql",
+    "connection": {
+      "host": "srvmasterclass.database.windows.net",
+      "user": "adminitvalley",
+      "password": "Itvalley01.",
+      "database": "dbmasterclasse",
+      "encrypt": true
+    },
+    "tz": "utc",
+    "meta": {}
+  },
+  "fileName": "dbmasterclasse.json",
+  "actionFilePath": "file:///C:/Projetos/ITValleyInternational/app/modules/connections/dbmasterclasse.json",
+  "serverType": "node"
+}

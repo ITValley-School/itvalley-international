@@ -1,0 +1,10 @@
+{
+  "chat.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "chateleves.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  }
+}

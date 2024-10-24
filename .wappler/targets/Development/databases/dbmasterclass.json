@@ -1,0 +1,100 @@
+{
+  "type": "mssql",
+  "connection": {
+    "host": "srvmasterclass.database.windows.net",
+    "user": "adminitvalley",
+    "password": "Itvalley01.",
+    "database": "dbmasterclasse",
+    "encrypt": true
+  },
+  "direct": true,
+  "schema": {
+    "tables": {
+      "epp.aluno": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "integer",
+              "primary": "PRIMARY",
+              "nullable": false
+            }
+          },
+          "nickname": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "nullable": false
+            }
+          },
+          "linkavatar": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "nullable": true
+            }
+          },
+          "annee": {
+            "db": {
+              "type": "integer",
+              "nullable": true
+            }
+          },
+          "professora": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "nullable": true
+            }
+          },
+          "email": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "nullable": true
+            }
+          }
+        },
+        "refs": {
+          "epp.conversa": "aluno1_id",
+          "epp.registro_conversas": "aluno_id"
+        }
+      },
+      "epp.conversa": {
+        "db": {},
+        "refs": {
+          "epp.registro_conversas": "id_conversa"
+        }
+      },
+      "epp.registro_conversas": {
+        "db": {}
+      },
+      "dbo.avatar": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": "PRIMARY",
+              "nullable": false
+            }
+          },
+          "avatar": {
+            "db": {
+              "type": "integer",
+              "nullable": true
+            }
+          }
+        }
+      }
+    },
+    "views": {
+      "sys.database_firewall_rules": {
+        "db": {
+          "name": "database_firewall_rules",
+          "schema": "sys"
+        }
+      }
+    }
+  }
+}

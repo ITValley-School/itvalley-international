@@ -1,0 +1,120 @@
+{
+  "type": "mssql",
+  "connection": {
+    "host": "srvmasterclass.database.windows.net",
+    "user": "adminitvalley",
+    "password": "Itvalley01.",
+    "database": "dbmasterclasse",
+    "encrypt": true
+  },
+  "direct": true,
+  "schema": {
+    "tables": {
+      "itv.usuarios": {
+        "db": {},
+        "refs": {
+          "itv.tarefas": "usuario_id",
+          "itv.logs_de_atividade": "usuario_id"
+        }
+      },
+      "itv.tarefas": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "integer",
+              "primary": "PRIMARY",
+              "nullable": false
+            }
+          },
+          "nome": {
+            "db": {
+              "type": "string",
+              "maxLength": 255,
+              "nullable": false
+            }
+          },
+          "descricao": {
+            "db": {
+              "type": "string",
+              "maxLength": -1,
+              "nullable": true
+            }
+          },
+          "estimativa_horas": {
+            "db": {
+              "type": "decimal",
+              "nullable": true
+            }
+          },
+          "status": {
+            "db": {
+              "type": "string",
+              "maxLength": 20,
+              "nullable": false
+            }
+          },
+          "data_inicio": {
+            "db": {
+              "type": "date",
+              "nullable": true
+            }
+          },
+          "data_termino_prevista": {
+            "db": {
+              "type": "date",
+              "nullable": true
+            }
+          },
+          "usuario_id": {
+            "db": {
+              "type": "reference",
+              "nullable": true,
+              "references": "id",
+              "inTable": "itv.usuarios",
+              "referenceType": "integer",
+              "onUpdate": "NO ACTION",
+              "onDelete": "NO ACTION"
+            }
+          },
+          "data_fim_realizado": {
+            "db": {
+              "type": "date",
+              "nullable": true
+            }
+          }
+        }
+      },
+      "itv.logs_de_atividade": {
+        "db": {}
+      },
+      "epp.aluno": {
+        "db": {},
+        "refs": {
+          "epp.conversa": "aluno1_id",
+          "epp.registro_conversas": "aluno_id"
+        }
+      },
+      "epp.conversa": {
+        "db": {},
+        "refs": {
+          "epp.registro_conversas": "id_conversa"
+        }
+      },
+      "epp.registro_conversas": {
+        "db": {}
+      },
+      "dbo.avatar": {
+        "db": {}
+      }
+    },
+    "views": {
+      "sys.database_firewall_rules": {
+        "db": {
+          "name": "database_firewall_rules",
+          "schema": "sys"
+        }
+      }
+    }
+  }
+}

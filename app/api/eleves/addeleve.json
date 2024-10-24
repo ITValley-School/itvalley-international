@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nickname"
+      },
+      {
+        "type": "text",
+        "name": "linkavatar"
+      },
+      {
+        "type": "text",
+        "name": "annee"
+      },
+      {
+        "type": "text",
+        "name": "professora"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "dbmasterclass",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "epp.aluno",
+              "column": "nickname",
+              "type": "text",
+              "value": "{{$_POST.nickname}}"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "linkavatar",
+              "type": "text",
+              "value": "{{$_POST.linkavatar}}"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "annee",
+              "type": "number",
+              "value": "{{$_POST.annee}}"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "professora",
+              "type": "text",
+              "value": "{{$_POST.professora}}"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "email",
+              "type": "text",
+              "value": "{{$_POST.email}}"
+            }
+          ],
+          "table": "epp.aluno",
+          "returning": "id",
+          "query": "insert into [epp].[aluno] ([annee], [email], [linkavatar], [nickname], [professora]) values (@p0, @p1, @p2, @p3, @p4)",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.nickname}}",
+              "test": ""
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.linkavatar}}",
+              "test": ""
+            },
+            {
+              "name": ":P3",
+              "type": "expression",
+              "value": "{{$_POST.annee}}",
+              "test": ""
+            },
+            {
+              "name": ":P4",
+              "type": "expression",
+              "value": "{{$_POST.professora}}",
+              "test": ""
+            },
+            {
+              "name": ":P5",
+              "type": "expression",
+              "value": "{{$_POST.email}}",
+              "test": ""
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

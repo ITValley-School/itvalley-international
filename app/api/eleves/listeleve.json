@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "dbmasterclass",
+        "sql": {
+          "type": "select",
+          "columns": [
+            {
+              "table": "epp.aluno",
+              "column": "nickname"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "linkavatar"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "annee"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "professora"
+            },
+            {
+              "table": "epp.aluno",
+              "column": "email"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "epp.aluno"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "select [nickname], [linkavatar], [annee], [professora], [email] from [epp].[aluno]"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "text",
+          "name": "nickname"
+        },
+        {
+          "type": "text",
+          "name": "linkavatar"
+        },
+        {
+          "type": "number",
+          "name": "annee"
+        },
+        {
+          "type": "text",
+          "name": "professora"
+        },
+        {
+          "type": "text",
+          "name": "email"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

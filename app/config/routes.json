@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/caduser",
+      "page": "caduser",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/destes2",
+      "page": "destes2",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/usuarios/listusuario",
+      "page": "usuarios/listusuario",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/teste-com-os-scriptsdosite",
+      "page": "teste-com-os-scriptsdosite",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/chat",
+      "page": "chat",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/chat/chat",
+      "page": "chat/chat",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/upload/uploadaudio",
+      "page": "upload/uploadaudio",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/Whisper/tts-ia",
+      "page": "Whisper/tts-ia",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/Whisper/tts-openai",
+      "page": "Whisper/tts-openai",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/taskdemand",
+      "page": "demandas/taskdemand",
+      "layout": "telaprincipal"
+    }
+  ]
+}

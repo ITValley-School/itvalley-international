@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "dbmasterclasse",
+        "sql": {
+          "type": "select",
+          "columns": [
+            {
+              "table": "itv.tarefas",
+              "column": "*"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "itv.tarefas"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "select * from [itv].[tarefas]"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "nome"
+        },
+        {
+          "type": "text",
+          "name": "descricao"
+        },
+        {
+          "type": "number",
+          "name": "estimativa_horas"
+        },
+        {
+          "type": "text",
+          "name": "status"
+        },
+        {
+          "type": "date",
+          "name": "data_inicio"
+        },
+        {
+          "type": "date",
+          "name": "data_termino_prevista"
+        },
+        {
+          "type": "number",
+          "name": "usuario_id"
+        },
+        {
+          "type": "date",
+          "name": "data_fim_realizado"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

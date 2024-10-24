@@ -1,0 +1,20 @@
+{
+  "name": "dbBImktstarts",
+  "module": "dbconnector",
+  "action": "connect",
+  "options": {
+    "client": "mssql",
+    "connection": {
+      "host": "srvbimktstart.database.windows.net",
+      "user": "adminsql",
+      "password": "Vencedor_01",
+      "database": "dbBImktstarts",
+      "encrypt": true
+    },
+    "tz": "utc",
+    "meta": {}
+  },
+  "fileName": "dbBImktstarts.json",
+  "actionFilePath": "file:///C:/Projetos/Front-end%20Bootcamps/app/modules/connections/dbBImktstarts.json",
+  "serverType": "node"
+}

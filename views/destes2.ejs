@@ -1,0 +1,29 @@
+<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="destes2" appConnect="local" components="{dmxFormRepeat:{}}" -->
+<dmx-serverconnect id="serverconnect" url="/api/ITValleyTeste/Produtos/listProd"></dmx-serverconnect>
+<div class="container" is="dmx-repeat" id="repeat2" dmx-bind:repeat="serverconnect.data.query">
+    <div class="row mt-3" dmx-repeat:repeat1="serverconnect.data">
+
+        <div class="col" key="$index">
+            <div class="card text-center">
+
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+
+                    <h5 class="card-title">{{Nome}}</h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary">Botao</a>
+                </div>
+
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<meta name="ac:route" content="/destes2">

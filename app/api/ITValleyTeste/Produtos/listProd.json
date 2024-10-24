@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      },
+      {
+        "type": "number",
+        "name": "id"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "dbBImktstarts",
+        "sql": {
+          "type": "select",
+          "columns": [
+            {
+              "table": "pre.dProdutor",
+              "column": "Nome"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "dProdutor",
+            "schema": "pre"
+          },
+          "joins": [],
+          "primary": "SK",
+          "orders": [],
+          "query": "select [Nome] from [pre].[dProdutor]"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "text",
+          "name": "Nome"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

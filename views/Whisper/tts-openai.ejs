@@ -1,0 +1,82 @@
+<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="ttsopenai" appConnect="local" -->
+<dmx-serverconnect id="sc_audio" url="/api/IA-Conversacional/tts-openai"></dmx-serverconnect>
+<meta name="ac:route" content="/Whisper/tts-openai">
+
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form id="formAudio" is="dmx-serverconnect-form" method="post" action="/api/IA-Conversacional/tts-openai">
+                <div class="row">
+                    <div class="col-10">
+                        <input id="text1" name="text" type="text" class="form-control">
+                    </div>
+                    <div class="col align-self-stretch text-end">
+                        <button id="btn1" class="btn btn-primary" dmx-on:click="run({run:{outputType:'text',action:`formAudio.submit();textarea.setValue(sc_audio.data.api.data)`}})" data-bs-toggle="button">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mt-4">
+            <div class="col text-center">
+                <audio id="audioElement" controls></audio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <textarea id="textarea" class="form-control"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/whisper/tts.js"></script>
+
+</body>
+
+
+
+
+
+<script>
+    document.getElementById('btn1').addEventListener('click', async function(event) {
+    event.preventDefault(); // Evita qualquer comportamento padrão associado ao botão
+    console.log('Botão clicado, chamando API');
+
+    // Captura o texto inserido no input
+    const text = document.getElementById('text1').value;
+    console.log(text)
+    
+    try {
+        const formData = new FormData();
+        formData.append('text', text);
+
+        // Faz a requisição usando fetch para o domínio da API diretamente
+        const response = await fetch('https://iaconversacional-api.azurewebsites.net/api/openai/tts', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            // Verifica o tipo de conteúdo retornado
+            console.log('Tipo de resposta:', response.headers.get('Content-Type'));
+            
+            // Obtém a resposta como um Blob de áudio
+            const audioBlob = await response.blob();
+            const audioUrl = URL.createObjectURL(audioBlob);
+            console.log('URL de áudio criada:', audioUrl);
+
+            // Define o src do elemento de áudio com a URL gerada
+            const audioElement = document.getElementById('audioElement');
+            audioElement.src = audioUrl;
+            audioElement.play();
+        } else {
+            console.error('Falha ao obter áudio da API:', response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error('Erro ao chamar a API:', error);
+    }
+});
+
+
+</script>
