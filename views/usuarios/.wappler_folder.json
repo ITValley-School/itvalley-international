@@ -1,0 +1,10 @@
+{
+  "listusuario.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "listeleves.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  }
+}

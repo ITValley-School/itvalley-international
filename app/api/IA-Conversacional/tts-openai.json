@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "options": {
+          "rules": {}
+        },
+        "name": "text"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "api",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "method": "POST",
+        "url": "https://iaconversacional-api.azurewebsites.net/api/openai/tts",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "audio/mpeg"
+        },
+        "schema": [
+          {
+            "type": "text",
+            "name": "data"
+          },
+          {
+            "type": "object",
+            "name": "headers"
+          }
+        ],
+        "dataType": "x-www-form-urlencoded",
+        "data": {
+          "text": "Ola mundo"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "text",
+          "name": "data"
+        },
+        {
+          "type": "object",
+          "name": "headers"
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "Cad.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "caduser.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "detest.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "destes2.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "teste-com-os-scriptsdosite.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "chat.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "index.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  }
+}

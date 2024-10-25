@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "connection": "dbmasterclass",
+        "sql": {
+          "type": "select",
+          "columns": [
+            {
+              "table": "avatar",
+              "column": "avatar",
+              "schema": "dbo"
+            }
+          ],
+          "params": [],
+          "table": {
+            "name": "avatar",
+            "schema": "dbo"
+          },
+          "joins": [],
+          "primary": "id",
+          "query": "select [avatar] from [dbo].[avatar]"
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "number",
+          "name": "avatar"
+        }
+      ],
+      "outputType": "array"
+    }
+  }
+}

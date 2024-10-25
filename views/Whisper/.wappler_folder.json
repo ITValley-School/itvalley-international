@@ -1,0 +1,18 @@
+{
+  "uploadaudio.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "tts-ia.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "paginateste.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "tts-openai.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  }
+}
