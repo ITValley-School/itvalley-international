@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "webhook_site",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "url": "https://webhook.site/2b2d73bf-f49e-4634-8249-d6031247bd44",
+        "method": "POST",
+        "dataType": "json",
+        "data": {
+          "nome": "{{$_POST.nome}}",
+          "email": "{{$_POST.email}}"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      },
+      "output": true
+    }
+  }
+}

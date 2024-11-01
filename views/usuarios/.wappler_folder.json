@@ -6,5 +6,29 @@
   "listeleves.ejs": {
     "layoutPage": "telaprincipal",
     "description": ""
+  },
+  "adduser.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "add-user.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "login.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "esqueceu-a-senha.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "login-user.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "login-novo.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
   }
 }

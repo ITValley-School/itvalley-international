@@ -2,5 +2,29 @@
   "taskdemand.ejs": {
     "layoutPage": "telaprincipal",
     "description": ""
+  },
+  "login-taskdemand.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "teste.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "pagina-carlos.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "apiepagamentos.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "taskdemand-beta.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "taskdemand-beta-teste.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
   }
 }

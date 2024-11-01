@@ -26,5 +26,9 @@
   "index.ejs": {
     "layoutPage": "telaprincipal",
     "description": ""
+  },
+  "teste-api.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
   }
 }

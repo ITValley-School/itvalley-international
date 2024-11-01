@@ -55,6 +55,51 @@
       "path": "/demandas/taskdemand",
       "page": "demandas/taskdemand",
       "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/login-taskdemand",
+      "page": "demandas/login-taskdemand",
+      "layout": "main"
+    },
+    {
+      "path": "/demandas/teste",
+      "page": "demandas/teste",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/pagina-carlos",
+      "page": "demandas/pagina-carlos",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/usuarios/adduser",
+      "page": "usuarios/adduser",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/usuarios/add-user",
+      "page": "usuarios/add-user",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/apiepagamentos",
+      "page": "demandas/apiepagamentos",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/teste-api",
+      "page": "teste-api",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/usuarios/esqueceu-a-senha",
+      "page": "usuarios/esqueceu-a-senha",
+      "layout": "main"
+    },
+    {
+      "path": "/usuarios/login-user",
+      "page": "usuarios/login-user",
+      "layout": "main"
     }
   ]
 }

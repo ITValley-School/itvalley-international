@@ -1,0 +1,23 @@
+<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="apiepagamentos" appConnect="local" -->
+<meta name="ac:route" content="/demandas/apiepagamentos">
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="/api/teste-wappler/server_side_webhook_site" dmx-generator="bootstrap5" dmx-form-type="vertical">
+                    <div class="form-group mb-3">
+                        <label for="inp_nome">Nome</label>
+                        <input type="text" class="form-control" id="inp_nome" name="nome" aria-describedby="inp_nome_help" placeholder="Enter Nome">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="inp_email">Email</label>
+                        <input type="text" class="form-control" id="inp_email" name="email" aria-describedby="inp_email_help" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-primary" dmx-bind:disabled="state.executing">Enviar <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

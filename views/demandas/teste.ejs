@@ -1,0 +1,68 @@
+<!-- Users List Table -->
+<div class="card">
+    <div class="card-header border-bottom">
+
+        <h5 class="card-title mb-0">Filters</h5>
+        <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
+            <div class="col-md-4 user_role"></div>
+            <div class="col-md-4 user_plan"></div>
+            <div class="col-md-4 user_status"></div>
+        </div>
+        <div class="d-flex">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descricao</th>
+                            <th>Estimativa horas</th>
+                            <th>Status</th>
+                            <th>Data inicio</th>
+                            <th>Data termino prevista</th>
+                            <th>Data fim realizado</th>
+                            <th>Aluno</th>
+                        </tr>
+                    </thead>
+                    <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="sc_listdemand.data.query" id="tableRepeat1">
+                        <tr>
+                            <td dmx-text="nome"></td>
+                            <td dmx-text="descricao"></td>
+                            <td dmx-text="estimativa_horas"></td>
+                            <td dmx-text="status"></td>
+                            <td dmx-text="data_inicio"></td>
+                            <td dmx-text="data_termino_prevista"></td>
+                            <td dmx-text="data_fim_realizado"></td>
+                            <td dmx-text="Aluno"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-flex">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <button id="btn1" class="btn btn-primary">Pegar Tarefa</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <button id="btn2" class="btn btn-primary">Pegar Tarefa</button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <button id="btn3" class="btn btn-primary">Pegar Tarefa</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>

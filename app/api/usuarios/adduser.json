@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "name": "senha"
+      },
+      {
+        "type": "text",
+        "name": "cargo"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "dbmasterclasse",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "itv.usuarios",
+              "column": "nome",
+              "type": "text",
+              "value": "{{$_POST.nome}}"
+            },
+            {
+              "table": "itv.usuarios",
+              "column": "email",
+              "type": "text",
+              "value": "{{$_POST.email}}"
+            },
+            {
+              "table": "itv.usuarios",
+              "column": "senha",
+              "type": "text",
+              "value": "{{$_POST.senha}}"
+            },
+            {
+              "table": "itv.usuarios",
+              "column": "cargo",
+              "type": "text",
+              "value": "{{$_POST.cargo}}"
+            }
+          ],
+          "table": "itv.usuarios",
+          "returning": "id",
+          "query": "select top(0) [t].[id] into #out from [itv].[usuarios] as t left join [itv].[usuarios] on 0=1;insert into [itv].[usuarios] ([cargo], [email], [nome], [senha]) output inserted.[id] into #out values (@p0, @p1, @p2, @p3); select [id] from #out; drop table #out;",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.nome}}",
+              "test": ""
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.email}}",
+              "test": ""
+            },
+            {
+              "name": ":P3",
+              "type": "expression",
+              "value": "{{$_POST.senha}}",
+              "test": ""
+            },
+            {
+              "name": ":P4",
+              "type": "expression",
+              "value": "{{$_POST.cargo}}",
+              "test": ""
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

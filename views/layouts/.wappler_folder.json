@@ -10,5 +10,8 @@
   },
   "principal.ejs": {
     "description": ""
+  },
+  "login.ejs": {
+    "description": ""
   }
 }
