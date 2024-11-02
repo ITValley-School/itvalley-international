@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "userid"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "identity",
+        "module": "auth",
+        "action": "identify",
+        "options": {
+          "provider": "security_official"
+        },
+        "output": true,
+        "meta": []
+      },
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "single",
+        "options": {
+          "connection": "dbmasterclasse",
+          "sql": {
+            "type": "select",
+            "columns": [
+              {
+                "table": "itv.tarefas",
+                "column": "nome"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "descricao"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "estimativa_horas"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "status"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "data_inicio"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "data_termino_prevista"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "usuario_id"
+              },
+              {
+                "table": "itv.tarefas",
+                "column": "data_fim_realizado"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{identity}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "itv.tarefas"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "itv.tarefas.usuario_id",
+                  "field": "itv.tarefas.usuario_id",
+                  "type": "double",
+                  "operator": "equal",
+                  "value": "{{identity}}",
+                  "data": {
+                    "table": "itv.tarefas",
+                    "column": "usuario_id",
+                    "type": "number",
+                    "columnObj": {
+                      "type": "reference",
+                      "nullable": true,
+                      "references": "id",
+                      "inTable": "itv.usuarios",
+                      "referenceType": "integer",
+                      "onUpdate": "NO ACTION",
+                      "onDelete": "NO ACTION",
+                      "name": "usuario_id"
+                    }
+                  },
+                  "operation": "="
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "select [nome], [descricao], [estimativa_horas], [status], [data_inicio], [data_termino_prevista], [usuario_id], [data_fim_realizado] from [itv].[tarefas] where [itv].[tarefas].[usuario_id] = @p0"
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "text",
+            "name": "nome"
+          },
+          {
+            "type": "text",
+            "name": "descricao"
+          },
+          {
+            "type": "number",
+            "name": "estimativa_horas"
+          },
+          {
+            "type": "text",
+            "name": "status"
+          },
+          {
+            "type": "date",
+            "name": "data_inicio"
+          },
+          {
+            "type": "date",
+            "name": "data_termino_prevista"
+          },
+          {
+            "type": "number",
+            "name": "usuario_id"
+          },
+          {
+            "type": "date",
+            "name": "data_fim_realizado"
+          }
+        ],
+        "outputType": "object"
+      }
+    ]
+  }
+}

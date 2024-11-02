@@ -1,4 +1,6 @@
-<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="taskdemand" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxBootstrap5TableGenerator:{}}" -->
+<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="taskdemand" appConnect="local" components="{dmxBootstrap5Navigation:{},dmxBootstrap5TableGenerator:{},dmxStateManagement:{}}" -->
+<dmx-serverconnect id="sc_getuserInfo" url="/api/usuarios/getuserInfo"></dmx-serverconnect>
+<dmx-serverconnect id="sc_listdemandByIDUser" url="/api/demandas/listdemandaByIdUser"></dmx-serverconnect>
 <dmx-serverconnect id="sc_listdemand" url="/api/demandas/listdemande"></dmx-serverconnect>
 
 <meta name="ac:route" content="/demandas/taskdemand">
@@ -248,29 +250,28 @@
 
             <div class="d-flex pt-0 pb-0 ps-0 pe-0">
                 <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover w-100" style="table-layout: fixed;">
-                        <!-- Classes Bootstrap para estilo e largura -->
-                        <thead class="table-dark">
-                            <!-- Cabeçalho escuro -->
-                            <tr class="table-secondary text-center">
-                                <th class="bg-primary-subtle text-primary">Nome</th>
-                                <th class="bg-primary-subtle text-primary">Descrição</th>
-                                <th class="bg-primary-subtle text-primary">Estimativa horas</th>
-                                <th class="bg-primary-subtle text-primary">Status</th>
-                                <th class="bg-primary-subtle text-primary">Data de Início</th>
-                                <th class="bg-primary-subtle text-primary">Data de Término Prevista</th>
-                                <th class="bg-primary-subtle text-primary">Data de Fim Realizado</th>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Descricao</th>
+                                <th>Estimativa horas</th>
+                                <th>Status</th>
+                                <th>Data inicio</th>
+                                <th>Data termino prevista</th>
+                                <th>Usuario</th>
+                                <th>Data fim realizado</th>
                             </tr>
                         </thead>
-                        <!-- dmx-serverconnect configurado para buscar apenas as tarefas do aluno logado -->
-                        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="sc_mytasks.data.query" id="tableRepeatMyTasks">
-                            <tr class="text-center">
+                        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="sc_listdemandByIDUser.data.query" id="tableRepeat2">
+                            <tr>
                                 <td dmx-text="nome"></td>
                                 <td dmx-text="descricao"></td>
                                 <td dmx-text="estimativa_horas"></td>
                                 <td dmx-text="status"></td>
                                 <td dmx-text="data_inicio"></td>
                                 <td dmx-text="data_termino_prevista"></td>
+                                <td dmx-text="usuario_id"></td>
                                 <td dmx-text="data_fim_realizado"></td>
                             </tr>
                         </tbody>
