@@ -101,5 +101,10 @@
       "page": "usuarios/login-user",
       "layout": "main"
     }
-  ]
+  ],
+  "layouts": {
+    "telaprincipal": {
+      "exec": "/api/auth/checkaccessUser"
+    }
+  }
 }

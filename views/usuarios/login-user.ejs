@@ -1,4 +1,5 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="login" appConnect="local" -->
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="login" appConnect="local" components="{dmxBrowser:{}}" -->
+<div is="dmx-browser" id="browserNavegation"></div>
 
 <!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="login" appConnect="local" components="{dmxValidator:{}}" -->
 <meta name="ac:route" content="/usuarios/login-user">
@@ -68,7 +69,7 @@
 
                         <h4 class="text-start mw-100 h-auto style2 mb-3">Informe seus dados para acessar sua Tarefas</h4>
 
-                        <form id="sc_login" class="mb-3" action="/api/auth/security" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{condition:{outputType:'boolean',if:`state.executing`,then:{steps:{'api.send':{name:'api',output:true,url:'/login'}}}}},{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')" credentials="true">
+                        <form id="sc_login" class="mb-3" action="/api/auth/security" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{condition:{outputType:'boolean',if:`state.executing`,then:{steps:{'api.send':{name:'api',output:true,url:'/login'}}}}},{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}},{run:{outputType:'text',action:`browserNavegation.goto(\'/demandas/taskdemand\')`}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')" credentials="true">
                             <div class="mb-6">
                                 <label for="email" class="form-label">E-mail</label>
                                 <input type="text" class="form-control" id="email" name="email" autofocus="" required="" data-msg-required="Campo obrigatório!" data-rule-email="" data-msg-email="Digite um e-mail válido!">
