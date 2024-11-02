@@ -1,20 +1,21 @@
 {
-  "name": "auth",
+  "name": "security_official",
   "module": "auth",
   "action": "provider",
   "options": {
-    "secret": "l42kpcCstRCJyqk",
+    "secret": "1bqqALedBvSqhTn",
     "provider": "Database",
     "connection": "dbmasterclasse",
+    "expires": 1,
+    "secure": true,
+    "sameSite": "Strict",
     "users": {
       "table": "itv.usuarios",
       "identity": "id",
       "username": "email",
       "password": "senha"
     },
-    "permissions": {},
-    "expires": 1,
-    "secure": true
+    "permissions": {}
   },
   "meta": [
     {

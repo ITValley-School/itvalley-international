@@ -1,0 +1,43 @@
+[
+  {
+    "name": "identity",
+    "module": "auth",
+    "action": "identify",
+    "options": {
+      "provider": "security_official"
+    },
+    "output": true,
+    "meta": []
+  },
+  {
+    "name": "",
+    "module": "core",
+    "action": "condition",
+    "options": {
+      "if": "{{identity}}",
+      "then": {
+        "steps": {
+          "name": "",
+          "module": "core",
+          "action": "response",
+          "options": {
+            "status": 201,
+            "data": "{{identity}}"
+          }
+        }
+      },
+      "else": {
+        "steps": {
+          "name": "",
+          "module": "core",
+          "action": "response",
+          "options": {
+            "status": 401,
+            "data": "Nao ta logado"
+          }
+        }
+      }
+    },
+    "outputType": "boolean"
+  }
+]

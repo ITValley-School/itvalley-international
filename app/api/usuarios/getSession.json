@@ -1,0 +1,53 @@
+[
+  {
+    "name": "verificarcookie",
+    "module": "core",
+    "action": "setvalue",
+    "options": {
+      "value": "$_COOKIE.lSSSAOEXISTE"
+    },
+    "meta": [],
+    "outputType": "text",
+    "output": true
+  },
+  {
+    "name": "",
+    "module": "core",
+    "action": "condition",
+    "options": {
+      "if": "{{$_COOKIE.loginuser==''}}",
+      "then": {
+        "steps": {
+          "name": "",
+          "module": "core",
+          "action": "response",
+          "options": {
+            "status": 200,
+            "data": "Tem cookie aqui"
+          }
+        }
+      },
+      "else": {
+        "steps": {
+          "name": "",
+          "module": "core",
+          "action": "response",
+          "options": {
+            "data": "Ta vazio",
+            "status": 401
+          }
+        }
+      }
+    },
+    "outputType": "boolean"
+  },
+  {
+    "name": "cookies_carlos",
+    "module": "core",
+    "action": "setcookie",
+    "options": {
+      "expires": 1,
+      "value": "teste_carlos"
+    }
+  }
+]

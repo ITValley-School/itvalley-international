@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ],
+    "$_POST": [
+      {
+        "type": "text",
+        "options": {
+          "rules": {
+            "core:required": {}
+          }
+        },
+        "name": "email"
+      },
+      {
+        "type": "text",
+        "options": {
+          "rules": {
+            "core:required": {}
+          }
+        },
+        "name": "senha"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "query",
+        "module": "dbconnector",
+        "action": "select",
+        "options": {
+          "connection": "dbmasterclasse",
+          "sql": {
+            "type": "select",
+            "columns": [
+              {
+                "table": "usuarios",
+                "column": "email",
+                "schema": "itv"
+              },
+              {
+                "table": "usuarios",
+                "column": "id",
+                "schema": "itv"
+              },
+              {
+                "table": "usuarios",
+                "column": "senha",
+                "schema": "itv"
+              }
+            ],
+            "params": [
+              {
+                "operator": "equal",
+                "type": "expression",
+                "name": ":P1",
+                "value": "{{$_POST.email}}",
+                "test": ""
+              }
+            ],
+            "table": {
+              "name": "usuarios",
+              "schema": "itv"
+            },
+            "primary": "id",
+            "joins": [],
+            "wheres": {
+              "condition": "AND",
+              "rules": [
+                {
+                  "id": "itv.usuarios.email",
+                  "field": "itv.usuarios.email",
+                  "type": "string",
+                  "operator": "equal",
+                  "value": "{{$_POST.email}}",
+                  "data": {
+                    "table": "usuarios",
+                    "column": "email",
+                    "type": "text",
+                    "columnObj": {
+                      "type": "string",
+                      "maxLength": 255,
+                      "nullable": false,
+                      "name": "email"
+                    },
+                    "schema": "itv"
+                  },
+                  "operation": "=",
+                  "table": "usuarios"
+                }
+              ],
+              "conditional": null,
+              "valid": true
+            },
+            "query": "select [email], [id], [senha] from [itv].[usuarios] where [itv].[usuarios].[email] = @p0",
+            "orders": []
+          }
+        },
+        "output": true,
+        "meta": [
+          {
+            "type": "text",
+            "name": "email"
+          },
+          {
+            "type": "number",
+            "name": "id"
+          },
+          {
+            "type": "text",
+            "name": "senha"
+          }
+        ],
+        "outputType": "array"
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "condition",
+        "options": {
+          "if": "{{query[0].email&&query[0].senha==$_POST.senha}}",
+          "then": {
+            "steps": [
+              {
+                "name": "sessionuserlogin",
+                "module": "core",
+                "action": "setsession",
+                "options": {
+                  "value": "{{query[0].id}}"
+                }
+              },
+              {
+                "name": "loginuser",
+                "module": "core",
+                "action": "setcookie",
+                "options": {
+                  "value": "{{query[0].id}}",
+                  "expires": 1
+                }
+              },
+              {
+                "name": "",
+                "module": "core",
+                "action": "response",
+                "options": {
+                  "status": 200,
+                  "data": "Login Efetuado com sucesso!"
+                }
+              }
+            ]
+          },
+          "else": {
+            "steps": {
+              "name": "",
+              "module": "core",
+              "action": "response",
+              "options": {
+                "status": 401,
+                "data": "Login ou senha incorreto"
+              }
+            }
+          }
+        },
+        "outputType": "boolean"
+      }
+    ]
+  }
+}

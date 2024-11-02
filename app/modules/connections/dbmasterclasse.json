@@ -11,10 +11,7 @@
       "database": "dbmasterclasse",
       "encrypt": true
     },
-    "tz": "utc",
-    "meta": {}
+    "tz": "utc"
   },
-  "fileName": "dbmasterclasse.json",
-  "actionFilePath": "file:///C:/Users/j_ped/Documents/IT%20Valley%20School/TaskDemand/itvalley-international-main/app/modules/connections/dbmasterclasse.json",
-  "serverType": "node"
+  "fileName": "dbmasterclasse.json"
 }

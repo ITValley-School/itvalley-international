@@ -68,15 +68,15 @@
 
                         <h4 class="text-start mw-100 h-auto style2 mb-3">Informe seus dados para acessar sua Tarefas</h4>
 
-                        <form id="sc_login" class="mb-3" action="/api/usuarios/loginuser" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')">
+                        <form id="sc_login" class="mb-3" action="/api/auth/security" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{condition:{outputType:'boolean',if:`state.executing`,then:{steps:{'api.send':{name:'api',output:true,url:'/login'}}}}},{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')" credentials="true">
                             <div class="mb-6">
-                                <label for="inp_email" class="form-label">E-mail</label>
-                                <input type="text" class="form-control" id="inp_email" name="email" autofocus="" required="" data-msg-required="Campo obrigatório!" data-rule-email="" data-msg-email="Digite um e-mail válido!">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="text" class="form-control" id="email" name="email" autofocus="" required="" data-msg-required="Campo obrigatório!" data-rule-email="" data-msg-email="Digite um e-mail válido!">
                             </div>
                             <div class="mb-6 form-password-toggle">
                                 <label class="form-label" for="password">Senha</label>
                                 <div class="input-group input-group-merge">
-                                    <input type="password" id="inp_senha" class="form-control" name="senha" placeholder="············" aria-describedby="password" required="" data-msg-required="Campo obrigatório!">
+                                    <input id="senha" class="form-control" name="senha" placeholder="············" aria-describedby="password" required="" data-msg-required="Campo obrigatório!">
                                     <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                 <button class="btn btn-primary d-grid w-100 mt-n2" type="submit">Entrar</button>
                                 <div class="d-flex justify-content-between mt-5">
                                     <div class="form-check mb-0 ms-2">
-                                        <input class="form-check-input" type="checkbox" id="remember-me" name="lembre-me">
+                                        <input class="form-check-input" type="checkbox" id="remember-me" name="lembreme">
                                         <label class="form-check-label" for="remember-me">Lembre-me</label>
                                     </div>
                                     <a href="https://api.whatsapp.com/send?phone=559870283598">
