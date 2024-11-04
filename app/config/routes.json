@@ -62,16 +62,6 @@
       "layout": "main"
     },
     {
-      "path": "/demandas/teste",
-      "page": "demandas/teste",
-      "layout": "telaprincipal"
-    },
-    {
-      "path": "/demandas/pagina-carlos",
-      "page": "demandas/pagina-carlos",
-      "layout": "telaprincipal"
-    },
-    {
       "path": "/usuarios/adduser",
       "page": "usuarios/adduser",
       "layout": "telaprincipal"
@@ -79,11 +69,6 @@
     {
       "path": "/usuarios/add-user",
       "page": "usuarios/add-user",
-      "layout": "telaprincipal"
-    },
-    {
-      "path": "/demandas/apiepagamentos",
-      "page": "demandas/apiepagamentos",
       "layout": "telaprincipal"
     },
     {
@@ -100,6 +85,26 @@
       "path": "/usuarios/login-user",
       "page": "usuarios/login-user",
       "layout": "main"
+    },
+    {
+      "path": "/demandas/detalhamento-demanda",
+      "page": "demandas/detalhamento-demanda",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/tarefas-realizadas",
+      "page": "demandas/tarefas-realizadas",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/tarefas-disponiveis",
+      "page": "demandas/tarefas-disponiveis",
+      "layout": "telaprincipal"
+    },
+    {
+      "path": "/demandas/tarefas-em-andamento",
+      "page": "demandas/tarefas-em-andamento",
+      "layout": "telaprincipal"
     }
   ],
   "layouts": {

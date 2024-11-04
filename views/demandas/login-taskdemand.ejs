@@ -1,9 +1,6 @@
 <!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="login" appConnect="local" components="{dmxValidator:{}}" -->
 <script is="dmx-flow" id="loginsucessflow" type="text/dmx-flow">{
-  runJS: {
-    outputType: "text",
-    function: "window.location.href='/demandas/taskdemand'"
-  }
+  api.send: {name: "api", output: true, url: "/demandas/taskdemand"}
 }</script>
 <dmx-serverconnect id="sc_principalpage" url="/api/demandas/listdemande"></dmx-serverconnect>
 <meta name="ac:route" content="/demandas/login-taskdemand">

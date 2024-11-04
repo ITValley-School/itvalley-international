@@ -1,0 +1,94 @@
+<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="detalhamentodemanda" appConnect="local" -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Login Basic - Pages | Vuexy - Bootstrap Admin Template</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/core.css" />
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/theme-default.css" />
+
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../../assets/vendor/libs/node-waves/node-waves.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../../assets/vendor/libs/typeahead-js/typeahead.css" />
+    <!-- Vendor -->
+    <link rel="stylesheet" href="../../assets/vendor/libs/@form-validation/form-validation.css" />
+
+    <!-- Page CSS -->
+    <!-- Page -->
+    <link rel="stylesheet" href="../../assets/vendor/css/pages/page-auth.css" />
+
+    <!-- Helpers -->
+    <script src="../../assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../../assets/js/config.js"></script>
+</head>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+<meta name="ac:route" content="/demandas/detalhamento-demanda">
+
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic">
+        <div class="authentication-inner py-6">
+            <!-- Login -->
+            <div class="card">
+                <div class="card-body">
+                    <img src="/assets/img/elements/placeholder-imagens.png">
+                    <!-- Logo -->
+                    <div class="app-brand justify-content-center mb-6">
+                    </div>
+                    <!-- /Logo -->
+
+                    <h4 class="text-start mw-100 h-auto style2 mb-3">Nome da Tarefa</h4>
+                    <p class="card-text"><b>Descrição da Tarefa:</b></p>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non erat porttitor, volutpat urna vel, hendrerit ante. Integer eget mi vel magna bibendum tristique. Etiam ornare erat diam, id iaculis elit euismod eu. Vivamus sed felis dapibus, auctor tellus non, varius ligula. Duis at commodo metus. Fusce suscipit leo non laoreet venenatis. Cras malesuada egestas libero sit amet commodo.
+
+                    </p>
+                    <p class="card-text"><b>Prazo de Entrega:</b></p>
+                    <p class="card-text"><span>XX/XX/XX</span></p>
+                    <p class="card-text"><b>Anexos:</b></p>
+                    <p class="card-text"><b>Entregáveis da Tarefa:</b></p>
+
+                    <form id="sc_login" class="mb-3" action="/api/auth/security" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{condition:{outputType:'boolean',if:`state.executing`,then:{steps:{'api.send':{name:'api',output:true,url:'/login'}}}}},{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}},{run:{outputType:'text',action:`browserNavegation.goto(\'/demandas/taskdemand\')`}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')" credentials="true">
+                        <div class="mb-6">
+
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+            <!-- /Register -->
+        </div>
+    </div>
+</div>

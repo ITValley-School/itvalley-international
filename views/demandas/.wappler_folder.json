@@ -26,5 +26,21 @@
   "taskdemand-beta-teste.ejs": {
     "layoutPage": "telaprincipal",
     "description": ""
+  },
+  "detalhamento-demanda.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "tarefas-realizadas.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "tarefas-disponiveis.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
+  },
+  "tarefas-em-andamento.ejs": {
+    "layoutPage": "telaprincipal",
+    "description": ""
   }
 }
