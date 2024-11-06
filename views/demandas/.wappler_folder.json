@@ -1,6 +1,6 @@
 {
   "taskdemand.ejs": {
-    "layoutPage": "telaprincipal",
+    "layoutPage": "page-horizontal",
     "description": ""
   },
   "login-taskdemand.ejs": {
@@ -32,15 +32,19 @@
     "description": ""
   },
   "tarefas-realizadas.ejs": {
-    "layoutPage": "telaprincipal",
+    "layoutPage": "page-horizontal",
     "description": ""
   },
   "tarefas-disponiveis.ejs": {
-    "layoutPage": "telaprincipal",
+    "layoutPage": "page-horizontal",
     "description": ""
   },
   "tarefas-em-andamento.ejs": {
-    "layoutPage": "telaprincipal",
+    "layoutPage": "page-horizontal",
+    "description": ""
+  },
+  "home.ejs": {
+    "layoutPage": "page-horizontal",
     "description": ""
   }
 }

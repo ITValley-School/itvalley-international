@@ -54,7 +54,7 @@
     {
       "path": "/demandas/taskdemand",
       "page": "demandas/taskdemand",
-      "layout": "telaprincipal"
+      "layout": "page-horizontal"
     },
     {
       "path": "/demandas/login-taskdemand",
@@ -94,17 +94,22 @@
     {
       "path": "/demandas/tarefas-realizadas",
       "page": "demandas/tarefas-realizadas",
-      "layout": "telaprincipal"
+      "layout": "page-horizontal"
     },
     {
       "path": "/demandas/tarefas-disponiveis",
       "page": "demandas/tarefas-disponiveis",
-      "layout": "telaprincipal"
+      "layout": "page-horizontal"
     },
     {
       "path": "/demandas/tarefas-em-andamento",
       "page": "demandas/tarefas-em-andamento",
-      "layout": "telaprincipal"
+      "layout": "page-horizontal"
+    },
+    {
+      "path": "/demandas/home",
+      "page": "demandas/home",
+      "layout": "page-horizontal"
     }
   ],
   "layouts": {
