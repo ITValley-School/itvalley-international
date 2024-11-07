@@ -118,57 +118,13 @@
                     <th>ações</th>
                 </tr>
             </thead>
-            <tbody class="table-border-bottom-0">
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Criar Interface para recebimento<br>de dados da Phoenixx</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Detalhes da Tarefa
-                        </button></td>
-                    <td>12 horas<br></td>
-                    <td><span class="badge bg-label-primary me-1">A Fazer</span></td>
-                    <td>12/11</td>
-                    <td>05/12
-                        <!-- Button ModalScrollable -->
-                    </td>
-                    <td>
-                        <!-- Button ModalScrollable -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Pegar Tarefa
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Desenvolvimento de IA para<br>produto da Phoenixx</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Detalhes da Tarefa
-                        </button></td>
-                    <td>28 horas<br></td>
-                    <td><span class="badge bg-label-warning me-1">Em Andamento</span></td>
-                    <td>16/11</td>
-                    <td>08/12</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Pegar Tarefa
-                        </button></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Aplicação em Python</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Detalhes da Tarefa
-                        </button></td>
-                    <td>16 horas</td>
-                    <td><span class="badge bg-label-success me-1">Feito</span></td>
-                    <td>22/11</td>
-                    <td>10/12</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
-                            Pegar Tarefa
-                        </button></td>
-                </tr>
+            <tbody id="taskTableBody" class="table-border-bottom-0">
+                <!-- O conteúdo será preenchido pelo JavaScript -->
             </tbody>
         </table>
     </div>
 </div>
 <!--/ Responsive Table -->
 </div>
+
+<script src="/assets/js/ItvalleyJs/demandas/demandedisp.js"></script>
