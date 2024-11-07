@@ -1,15 +1,13 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="login" appConnect="local" components="{dmxValidator:{}}" -->
-<script is="dmx-flow" id="loginsucessflow" type="text/dmx-flow">{
-  api.send: {name: "api", output: true, url: "/demandas/taskdemand"}
-}</script>
-<dmx-serverconnect id="sc_principalpage" url="/api/demandas/listdemande"></dmx-serverconnect>
-<meta name="ac:route" content="/demandas/login-taskdemand">
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="esqueceuasenha" appConnect="local" -->
+
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="esqueceu_senha" appConnect="local" components="{dmxValidator:{}}" -->
+<meta name="ac:route" content="/usuarios/two-steps">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login Basic - Pages | Vuexy - Bootstrap Admin Template</title>
+    <title>Forgot Password Basic - Pages | Vuexy - Bootstrap Admin Template</title>
 
     <meta name="description" content="" />
 
@@ -59,56 +57,43 @@
     <div class="container-xxl">
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner py-6">
-                <!-- Login -->
+                <!-- Forgot Password -->
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
-                        <div class="app-brand justify-content-center mb-6">
-                        </div>
-                        <!-- /Logo -->
                         <img src="/assets/img/logo/logo_horizontal.png" width="165" height="80" class="align-self-start style1 mt-n2 mb-1 ms-auto me-auto pb-0 ps-0">
-
-                        <h4 class="text-start mw-100 h-auto style2 mb-3">Informe seus dados para acessar sua Tarefas</h4>
-
-                        <form id="sc_login" class="mb-3" action="/api/usuarios/loginuser" method="post" is="dmx-serverconnect-form" dmx-on:success="run([{run:{outputType:'text',action:`notifies.success(\'Login realizado com sucesso!\')`}},{wait:{delay:2000}},{runJS:{outputType:'text',function:'window.location.href=\'/demandas/taskdemand\''}}])" dmx-on:unauthorized="notifies.danger('Usuário ou Senha inválidos!')">
+                        <!-- /Logo -->
+                        <h4 class="mb-1">Verificação em duas etapas
+                            💬</h4>
+                        <p class="text-start mb-6">
+                            Enviamos um código de verificação para o seu celular. Digite o código do celular no campo abaixo.
+                            <span class="fw-medium d-block mt-1 text-heading">******1234</span>
+                        </p>
+                        <p class="mb-0">Digite seu código de segurança de 6 dígitos
+                        </p>
+                        <form id="twoStepsForm" action="index.html" method="GET">
                             <div class="mb-6">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="text" class="form-control" id="email" name="email" autofocus="" required="" data-msg-required="Campo obrigatório!" data-rule-email="" data-msg-email="Digite um e-mail válido!">
-                            </div>
-                            <div class="mb-6 form-password-toggle">
-                                <label class="form-label" for="password">Senha</label>
-                                <div class="input-group input-group-merge">
-                                    <input type="password" id="senha" class="form-control" name="senha" placeholder="············" aria-describedby="password" required="" data-msg-required="Campo obrigatório!">
-                                    <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                                <div class="auth-input-wrapper d-flex align-items-center justify-content-between numeral-mask-wrapper">
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" autofocus />
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" />
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" />
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" />
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" />
+                                    <input type="tel" class="form-control auth-input h-px-50 text-center numeral-mask mx-sm-1 my-2" maxlength="1" />
                                 </div>
+                                <!-- Create a hidden field which is combined by 3 fields above -->
+                                <input type="hidden" name="otp" />
                             </div>
-                            <div class="my-8">
-                                <div class="d-flex justify-content-between mt-1 mb-3">
-                                    <div class="form-check mb-0 ms-2">
-                                        <input class="form-check-input" type="checkbox" id="remember-me" name="lembre-me">
-                                        <label class="form-check-label" for="remember-me">Lembre-me</label>
-                                    </div>
-                                    <a href="https://api.whatsapp.com/send?phone=559870283598">
-                                        <p class="mb-0">Esqueceu a senha?</p>
-                                    </a>
-                                </div><button class="btn btn-primary d-grid w-100" type="submit" dmx-on:click="">Entrar</button>
+                            <button class="btn btn-primary d-grid w-100 mb-6">Verificar minha conta</button>
+                            <div class="text-center">
+                                Não recebeu o código?
 
-                            </div>
-                            <div class="mb-6">
-
+                                <a href="javascript:void(0);"> Reenviar </a>
                             </div>
                         </form>
-
-                        <p class="text-center"><span>Ainda não tem uma conta?</span><br>
-                            <a href="https://api.whatsapp.com/send?phone=559870283598">
-                                <span>Entre em contato conosco</span>
-                            </a>
-                        </p>
-
-
                     </div>
                 </div>
-                <!-- /Register -->
+                <!-- /Forgot Password -->
             </div>
         </div>
     </div>
@@ -131,6 +116,7 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/cleavejs/cleave.js"></script>
     <script src="../../assets/vendor/libs/@form-validation/popular.js"></script>
     <script src="../../assets/vendor/libs/@form-validation/bootstrap5.js"></script>
     <script src="../../assets/vendor/libs/@form-validation/auto-focus.js"></script>
@@ -140,4 +126,5 @@
 
     <!-- Page JS -->
     <script src="../../assets/js/pages-auth.js"></script>
+    <script src="../../assets/js/pages-auth-two-steps.js"></script>
 </body>

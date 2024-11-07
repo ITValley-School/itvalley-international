@@ -1,8 +1,4 @@
 {
-  "taskdemand.ejs": {
-    "layoutPage": "page-horizontal",
-    "description": ""
-  },
   "login-taskdemand.ejs": {
     "layoutPage": "main",
     "description": ""
@@ -44,6 +40,10 @@
     "description": ""
   },
   "home.ejs": {
+    "layoutPage": "page-horizontal",
+    "description": ""
+  },
+  "home-antiga.ejs": {
     "layoutPage": "page-horizontal",
     "description": ""
   }

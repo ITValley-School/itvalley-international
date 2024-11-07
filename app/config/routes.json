@@ -17,11 +17,6 @@
       "layout": "telaprincipal"
     },
     {
-      "path": "/usuarios/listusuario",
-      "page": "usuarios/listusuario",
-      "layout": "telaprincipal"
-    },
-    {
       "path": "/teste-com-os-scriptsdosite",
       "page": "teste-com-os-scriptsdosite",
       "layout": "telaprincipal"
@@ -52,19 +47,9 @@
       "layout": "telaprincipal"
     },
     {
-      "path": "/demandas/taskdemand",
-      "page": "demandas/taskdemand",
+      "path": "/demandas/home-antiga",
+      "page": "demandas/home-antiga",
       "layout": "page-horizontal"
-    },
-    {
-      "path": "/demandas/login-taskdemand",
-      "page": "demandas/login-taskdemand",
-      "layout": "main"
-    },
-    {
-      "path": "/usuarios/adduser",
-      "page": "usuarios/adduser",
-      "layout": "telaprincipal"
     },
     {
       "path": "/usuarios/add-user",
@@ -87,18 +72,8 @@
       "layout": "main"
     },
     {
-      "path": "/demandas/detalhamento-demanda",
-      "page": "demandas/detalhamento-demanda",
-      "layout": "telaprincipal"
-    },
-    {
       "path": "/demandas/tarefas-realizadas",
       "page": "demandas/tarefas-realizadas",
-      "layout": "page-horizontal"
-    },
-    {
-      "path": "/demandas/tarefas-disponiveis",
-      "page": "demandas/tarefas-disponiveis",
       "layout": "page-horizontal"
     },
     {
@@ -110,6 +85,11 @@
       "path": "/demandas/home",
       "page": "demandas/home",
       "layout": "page-horizontal"
+    },
+    {
+      "path": "/usuarios/two-steps",
+      "page": "usuarios/two-steps",
+      "layout": "main"
     }
   ],
   "layouts": {

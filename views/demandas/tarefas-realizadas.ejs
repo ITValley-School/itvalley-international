@@ -1,18 +1,161 @@
-<!-- Wappler include head-page="layouts/telaprincipal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="tarefasrealizadas" appConnect="local" -->
-<div class="container">
-    <div class="row">
-        <h3>Tarefas Realizadas</h3>
-        <div class="col-lg-6 mb-6 mb-xl-0">
-            <div class="demo-inline-spacing mt-4">
-                <div class="list-group">
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action active">Tarefa 1</a>
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">Tarefa 2</a>
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action disabled active">Tarefa 3</a>
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action">Tarefa 4</a>
-                    <a href="javascript:void(0);" class="list-group-item list-group-item-action active">Tarefa 5</a>
+<!-- Wappler include head-page="layouts/page-horizontal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="home" appConnect="local" -->
+<meta name="ac:route" content="/demandas/tarefas-realizadas">
+<!-- Wappler include head-page="layouts/page-horizontal" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="vagasconsultadas" appConnect="local" -->
+<div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalScrollable" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalScrollableTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                    <p>
+                        Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                        in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                    </p>
+                    <p>
+                        Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                        lacus vel augue laoreet rutrum faucibus dolor auctor.
+                    </p>
+                    <p>
+                        Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                        scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                        auctor fringilla.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<meta name="ac:route" content="/demandas/tarefas-realizadas">
+<!-- Responsive Table -->
+<div class="card ms-auto">
+    <h5 class="card-header">Tarefas Realizadas</h5>
+    <div class="table-responsive text-nowrap">
+
+        <table class="table">
+            <thead>
+                <tr class="text-nowrap">
+                    <th>#</th>
+                    <th>nome da tarefa</th>
+                    <th>descrição</th>
+                    <th>estimativa de horas</th>
+                    <th>status</th>
+                    <th>data de início</th>
+                    <th>data de conclusão</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Criar Interface para recebimento<br>de dados da Phoenixx</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
+                            Detalhes da Tarefa
+                        </button></td>
+                    <td>12 horas<br></td>
+                    <td><span class="badge bg-label-success me-1">Feito</span></td>
+                    <td>12/11</td>
+                    <td>05/12
+                        <!-- Button ModalScrollable -->
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Desenvolvimento de IA para<br>produto da Phoenixx</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
+                            Detalhes da Tarefa
+                        </button></td>
+                    <td>28 horas<br></td>
+                    <td><span class="badge bg-label-success me-1">Feito</span></td>
+                    <td>16/11</td>
+                    <td>08/12</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Aplicação em Python</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalScrollable">
+                            Detalhes da Tarefa
+                        </button></td>
+                    <td>16 horas</td>
+                    <td><span class="badge bg-label-success me-1">Feito</span></td>
+                    <td>22/11</td>
+                    <td>10/12</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--/ Responsive Table -->
+</div>

@@ -5,13 +5,13 @@
   "main.ejs": {
     "description": ""
   },
-  "telaprincipal.ejs": {
-    "description": ""
-  },
   "principal.ejs": {
     "description": ""
   },
   "login.ejs": {
+    "description": ""
+  },
+  "page-vertical.ejs": {
     "description": ""
   }
 }
