@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "nome"
+      },
+      {
+        "type": "text",
+        "name": "descricao"
+      },
+      {
+        "type": "number",
+        "name": "estimativa_horas"
+      },
+      {
+        "type": "text",
+        "name": "status"
+      },
+      {
+        "type": "date",
+        "name": "data_inicio"
+      },
+      {
+        "type": "date",
+        "name": "data_termino_prevista"
+      },
+      {
+        "type": "number",
+        "name": "usuario_id"
+      },
+      {
+        "type": "date",
+        "name": "data_fim_realizado"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "dbmasterclasse",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "itv.tarefas",
+              "column": "nome",
+              "type": "text",
+              "value": "{{$_POST.nome}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "descricao",
+              "type": "text",
+              "value": "{{$_POST.descricao}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "estimativa_horas",
+              "type": "number",
+              "value": "{{$_POST.estimativa_horas}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "status",
+              "type": "text",
+              "value": "{{$_POST.status}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "data_inicio",
+              "type": "date",
+              "value": "{{$_POST.data_inicio}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "data_termino_prevista",
+              "type": "date",
+              "value": "{{$_POST.data_termino_prevista}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "usuario_id",
+              "type": "number",
+              "value": "{{$_POST.usuario_id}}"
+            },
+            {
+              "table": "itv.tarefas",
+              "column": "data_fim_realizado",
+              "type": "date",
+              "value": "{{$_POST.data_fim_realizado}}"
+            }
+          ],
+          "table": "itv.tarefas",
+          "returning": "id",
+          "query": "select top(0) [t].[id] into #out from [itv].[tarefas] as t left join [itv].[tarefas] on 0=1;insert into [itv].[tarefas] ([data_fim_realizado], [data_inicio], [data_termino_prevista], [descricao], [estimativa_horas], [nome], [status], [usuario_id]) output inserted.[id] into #out values (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); select [id] from #out; drop table #out;",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.nome}}",
+              "test": ""
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.descricao}}",
+              "test": ""
+            },
+            {
+              "name": ":P3",
+              "type": "expression",
+              "value": "{{$_POST.estimativa_horas}}",
+              "test": ""
+            },
+            {
+              "name": ":P4",
+              "type": "expression",
+              "value": "{{$_POST.status}}",
+              "test": ""
+            },
+            {
+              "name": ":P5",
+              "type": "expression",
+              "value": "{{$_POST.data_inicio}}",
+              "test": ""
+            },
+            {
+              "name": ":P6",
+              "type": "expression",
+              "value": "{{$_POST.data_termino_prevista}}",
+              "test": ""
+            },
+            {
+              "name": ":P7",
+              "type": "expression",
+              "value": "{{$_POST.usuario_id}}",
+              "test": ""
+            },
+            {
+              "name": ":P8",
+              "type": "expression",
+              "value": "{{$_POST.data_fim_realizado}}",
+              "test": ""
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ],
+      "output": false
+    }
+  }
+}

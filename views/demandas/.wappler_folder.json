@@ -46,5 +46,9 @@
   "home-antiga.ejs": {
     "layoutPage": "page-horizontal",
     "description": ""
+  },
+  "create-demande.ejs": {
+    "layoutPage": "page-horizontal",
+    "description": ""
   }
 }

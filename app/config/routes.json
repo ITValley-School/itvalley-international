@@ -90,6 +90,11 @@
       "path": "/usuarios/two-steps",
       "page": "usuarios/two-steps",
       "layout": "main"
+    },
+    {
+      "path": "/demandas/create-demande",
+      "page": "demandas/create-demande",
+      "layout": "page-horizontal"
     }
   ],
   "layouts": {

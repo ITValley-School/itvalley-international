@@ -1,0 +1,73 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="createdemande" appConnect="local" -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <form is="dmx-serverconnect-form" id="sccreatedemande" method="post" action="/api/demandas/createDemande" dmx-generator="bootstrap5" dmx-form-type="vertical">
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_nome">Task Name</label>
+                            <input type="text" class="form-control" id="inp_nome" name="nome" aria-describedby="inp_nome_help" placeholder="Enter Nome" dmxorgdomid="d72">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_estimativa_horas">Estimativa horas</label>
+                            <input type="number" class="form-control" id="inp_estimativa_horas" name="estimativa_horas" aria-describedby="inp_estimativa_horas_help" placeholder="Enter Estimativa horas" dmxorgdomid="d84">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_status">Status</label>
+                            <input type="text" class="form-control" id="inp_status" name="status" aria-describedby="inp_status_help" placeholder="Enter Status" dmxorgdomid="d90">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_data_inicio">Data inicio</label>
+                            <input type="date" class="form-control" id="inp_data_inicio" name="data_inicio" aria-describedby="inp_data_inicio_help" placeholder="Enter Data inicio" dmxorgdomid="d96">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_data_termino_prevista">Data termino prevista</label>
+                            <input type="date" class="form-control" id="inp_data_termino_prevista" name="data_termino_prevista" aria-describedby="inp_data_termino_prevista_help" placeholder="Enter Data termino prevista" dmxorgdomid="d102">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_usuario_id">Usuario</label>
+                            <input type="number" class="form-control" id="inp_usuario_id" name="usuario_id" aria-describedby="inp_usuario_id_help" placeholder="Enter Usuario" dmxorgdomid="d108">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <label for="inp_data_fim_realizado">Data fim realizado</label>
+                            <input type="date" class="form-control" id="inp_data_fim_realizado" name="data_fim_realizado" aria-describedby="inp_data_fim_realizado_help" placeholder="Enter Data fim realizado" dmxorgdomid="d114">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gx-3">
+                    <div class="col">
+                        <div class="form-group mb-3">
+                            <button type="submit" class="btn btn-primary" dmx-bind:disabled="state.executing" dmxorgdomid="d119">Save <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing" dmxorgdomid="d120"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<meta name="ac:route" content="/demandas/create-demande">
