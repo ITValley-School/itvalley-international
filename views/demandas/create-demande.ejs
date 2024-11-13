@@ -2,7 +2,7 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <form is="dmx-serverconnect-form" id="sccreatedemande" method="post" action="/api/demandas/createDemande" dmx-generator="bootstrap5" dmx-form-type="vertical">
+            <form method="post" dmx-generator="bootstrap5" dmx-form-type="vertical">
                 <div class="row gx-3">
                     <div class="col">
                         <div class="form-group mb-3">
@@ -62,7 +62,7 @@
                 <div class="row gx-3">
                     <div class="col">
                         <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-primary" dmx-bind:disabled="state.executing" dmxorgdomid="d119">Save <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing" dmxorgdomid="d120"></span></button>
+                            <button type="submit" id="btnSubmit" class="btn btn-primary" dmx-bind:disabled="state.executing" dmxorgdomid="d119">Save <span class="spinner-border spinner-border-sm" role="status" dmx-show="state.executing" dmxorgdomid="d120"></span></button>
                         </div>
                     </div>
                 </div>
@@ -70,4 +70,5 @@
         </div>
     </div>
 </div>
+<script src="/assets/js/ItvalleyJs/demandas/createdemande.js"></script>
 <meta name="ac:route" content="/demandas/create-demande">
