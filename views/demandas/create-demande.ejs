@@ -1,4 +1,22 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="createdemande" appConnect="local" -->
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="createdemande" appConnect="local" components="{dmxBootstrap5Modal:{}}" -->
+<div class="modal" id="modaldescriptiontask" is="dmx-bs5-modal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Description of Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <textarea id="txtAreaDescription" class="form-control" row="20" name="descricao"></textarea>
+                <p>Descreva com detalhes a tarefa</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container mt-5">
     <div class="row">
         <div class="col">
@@ -8,6 +26,14 @@
                         <div class="form-group mb-3">
                             <label for="inp_nome">Task Name</label>
                             <input type="text" class="form-control" id="inp_nome" name="nome" aria-describedby="inp_nome_help" placeholder="Enter Nome" dmxorgdomid="d72">
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="form-group mb-3">
+                                <label for="inp_nome1">Description</label>
+
+                                <input type="textarea" class="form-control" id="inp_nome1" name="nome1" aria-describedby="inp_nome_help" placeholder="Enter Nome" dmxorgdomid="d72">
+                            </div><button id="btnDescription" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaldescriptiontask">Button</button>
                         </div>
                     </div>
                 </div>
