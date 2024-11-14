@@ -1,9 +1,23 @@
+
+
+// Variável para armazenar a descrição do modal
+let descricaotxtarea = '';
+
+// Função para capturar o valor da descrição ao clicar no botão "Save changes"
+document.getElementById("btnSalveDescription").addEventListener("click", function() {
+    descricaotxtarea = document.getElementById("txtAreaDescription").value;
+    console.log(descricaotxtarea);
+})
+
+
+
 document.getElementById("btnSubmit").addEventListener("click", async function(event) {
     event.preventDefault(); // Previne o envio padrão do formulário
 
     // Captura os valores dos campos do formulário
     const data = {
         nome: document.getElementById("inp_nome").value,
+        descricao: descricaotxtarea || null,
         estimativa_horas: document.getElementById("inp_estimativa_horas").value || null,
         status: document.getElementById("inp_status").value,
         data_inicio: document.getElementById("inp_data_inicio").value || null,
