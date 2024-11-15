@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "number",
+        "name": "id"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "query",
+      "module": "dbconnector",
+      "action": "single",
+      "options": {
+        "connection": "dbmasterclasse",
+        "sql": {
+          "type": "select",
+          "columns": [
+            {
+              "table": "itv.tarefas",
+              "column": "descricao"
+            }
+          ],
+          "params": [
+            {
+              "operator": "equal",
+              "type": "expression",
+              "name": ":P1",
+              "value": "{{$_POST.id}}",
+              "test": ""
+            }
+          ],
+          "table": {
+            "name": "itv.tarefas"
+          },
+          "primary": "id",
+          "joins": [],
+          "query": "select [descricao] from [itv].[tarefas] where [itv].[tarefas].[id] = @p0",
+          "wheres": {
+            "condition": "AND",
+            "rules": [
+              {
+                "id": "itv.tarefas.id",
+                "field": "itv.tarefas.id",
+                "type": "double",
+                "operator": "equal",
+                "value": "{{$_POST.id}}",
+                "data": {
+                  "table": "itv.tarefas",
+                  "column": "id",
+                  "type": "number",
+                  "columnObj": {
+                    "type": "integer",
+                    "primary": "PRIMARY",
+                    "nullable": false,
+                    "name": "id"
+                  }
+                },
+                "operation": "="
+              }
+            ],
+            "conditional": null,
+            "valid": true
+          },
+          "orders": []
+        }
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "text",
+          "name": "descricao"
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}

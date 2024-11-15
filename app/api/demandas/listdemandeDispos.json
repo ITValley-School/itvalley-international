@@ -34,6 +34,10 @@
             "columns": [
               {
                 "table": "itv.tarefas",
+                "column": "id"
+              },
+              {
+                "table": "itv.tarefas",
                 "column": "nome"
               },
               {
@@ -91,17 +95,22 @@
                       "name": "usuario_id"
                     }
                   },
-                  "operation": "<>"
+                  "operation": "<>",
+                  "table": "itv.tarefas"
                 }
               ],
               "conditional": null,
               "valid": true
             },
-            "query": "select [nome], [descricao], [estimativa_horas], [status], [data_inicio] from [itv].[tarefas] where [itv].[tarefas].[usuario_id] <> @p0"
+            "query": "select [id], [nome], [descricao], [estimativa_horas], [status], [data_inicio] from [itv].[tarefas] where [itv].[tarefas].[usuario_id] <> @p0"
           }
         },
         "output": true,
         "meta": [
+          {
+            "type": "number",
+            "name": "id"
+          },
           {
             "type": "text",
             "name": "nome"
