@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "number",
+        "name": "tarefa_id"
+      },
+      {
+        "type": "number",
+        "name": "usuario_id"
+      },
+      {
+        "type": "text",
+        "name": "status_aprovacao"
+      },
+      {
+        "type": "date",
+        "name": "data_aprovacao"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "identity",
+        "module": "auth",
+        "action": "identify",
+        "options": {
+          "provider": "security_official"
+        },
+        "output": true,
+        "meta": []
+      },
+      {
+        "name": "insert",
+        "module": "dbupdater",
+        "action": "insert",
+        "options": {
+          "connection": "dbmasterclasse",
+          "sql": {
+            "type": "insert",
+            "values": [
+              {
+                "table": "itv.tarefas_atribuidas",
+                "column": "tarefa_id",
+                "type": "number",
+                "value": "{{$_POST.tarefa_id}}"
+              },
+              {
+                "table": "itv.tarefas_atribuidas",
+                "column": "usuario_id",
+                "type": "number",
+                "value": "{{identity}}"
+              },
+              {
+                "table": "itv.tarefas_atribuidas",
+                "column": "status_aprovacao",
+                "type": "text",
+                "value": "{{$_POST.status_aprovacao}}"
+              },
+              {
+                "table": "itv.tarefas_atribuidas",
+                "column": "data_aprovacao",
+                "type": "datetime",
+                "value": "{{$_POST.data_aprovacao}}"
+              }
+            ],
+            "table": "itv.tarefas_atribuidas",
+            "returning": "id",
+            "query": "select top(0) [t].[id] into #out from [itv].[tarefas_atribuidas] as t left join [itv].[tarefas_atribuidas] on 0=1;insert into [itv].[tarefas_atribuidas] ([data_aprovacao], [status_aprovacao], [tarefa_id], [usuario_id]) output inserted.[id] into #out values (@p0, @p1, @p2, @p3); select [id] from #out; drop table #out;",
+            "params": [
+              {
+                "name": ":P1",
+                "type": "expression",
+                "value": "{{$_POST.tarefa_id}}",
+                "test": ""
+              },
+              {
+                "name": ":P2",
+                "type": "expression",
+                "value": "{{identity}}",
+                "test": ""
+              },
+              {
+                "name": ":P3",
+                "type": "expression",
+                "value": "{{$_POST.status_aprovacao}}",
+                "test": ""
+              },
+              {
+                "name": ":P4",
+                "type": "expression",
+                "value": "{{$_POST.data_aprovacao}}",
+                "test": ""
+              }
+            ]
+          }
+        },
+        "meta": [
+          {
+            "name": "identity",
+            "type": "text"
+          },
+          {
+            "name": "affected",
+            "type": "number"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -36,7 +36,7 @@
     "description": ""
   },
   "tarefas-em-andamento.ejs": {
-    "layoutPage": "page-horizontal",
+    "layoutPage": "page-vertical",
     "description": ""
   },
   "home.ejs": {
@@ -48,7 +48,7 @@
     "description": ""
   },
   "create-demande.ejs": {
-    "layoutPage": "page-horizontal",
+    "layoutPage": "page-vertical",
     "description": ""
   }
 }

@@ -1,4 +1,4 @@
-<!-- Wappler include head-page="layouts/page-horizontal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="home" appConnect="local" -->
+<!-- Wappler include head-page="layouts/page-horizontal" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="home" appConnect="local" components="{dmxBootstrap5Modal:{}}" -->
 <meta name="ac:route" content="/demandas/home">
 <!-- Wappler include head-page="layouts/page-horizontal" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="vagasconsultadas" appConnect="local" -->
 <div>
@@ -17,10 +17,27 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    <button type="button" id="modaldescricaogettask" data-task-id="1" class="btn btn-primary">Pedir Tarefa</button><button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
                         Close
                     </button>
-                    <button type="button" class="btn btn-primary">Pedir Tarefa</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modalGetTask" is="dmx-bs5-modal" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">getTask</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Voce confirma que deseja pegar essa tarefa?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modalGetTaskConfirme" class="btn btn-primary" data-task-id="1">Confirmo!&nbsp;<a href="#"><br></a></button><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                 </div>
             </div>
         </div>

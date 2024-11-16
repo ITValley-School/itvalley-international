@@ -79,7 +79,7 @@
     {
       "path": "/demandas/tarefas-em-andamento",
       "page": "demandas/tarefas-em-andamento",
-      "layout": "page-horizontal"
+      "layout": "page-vertical"
     },
     {
       "path": "/demandas/home",
@@ -94,7 +94,7 @@
     {
       "path": "/demandas/create-demande",
       "page": "demandas/create-demande",
-      "layout": "page-horizontal"
+      "layout": "page-vertical"
     }
   ],
   "layouts": {

@@ -51,7 +51,7 @@ async function fetchTasks() {
                         <td><span class="${statusClass}">${task.status}</span></td>
                         <td>${task.data_inicio || 'N/A'}</td>
                         <td>${task.data_termino_previsto || 'N/A'}</td>
-                        <td><button type="button" class="btn btn-primary" data-action="getTask" data-bs-toggle="modal" data-bs-target="#modalDescriptionTask">
+                        <td><button type="button" class="btn btn-primary" data-task-id="${task.id}" data-action="getTask" data-bs-toggle="modal" data-bs-target="#modalGetTask">
                             Pegar Tarefa
                         </button></td>
                     </tr>
@@ -75,12 +75,41 @@ document.getElementById('taskTableBody').addEventListener('click', function(even
         const action = target.getAttribute('data-action');
 
         if (action === 'Details') {
+
+            //Atribuindo o ID da task ao botao (confirmar) do modal
+            buttonConfirme = document.getElementById("modaldescricaogettask")
+            buttonConfirme.setAttribute("data-task-id", taskId)                
             TaskDetails(taskId);
-        } else if (action === 'pegar') {
-            pegarTarefa(taskId);
+
+        } else if (action === 'getTask') {
+            
+            //Atribuindo o ID da task ao botao (confirmar) do modal
+            botaoModalConfime = document.getElementById("modalGetTaskConfirme")
+            botaoModalConfime.setAttribute("data-task-id", taskId)
+            
+            //getTask(taskId);
         }
     }
 });
+
+
+//Botao de confirmaçao - descricao
+
+document.getElementById('modaldescricaogettask').addEventListener('click', function(){
+    botaoModalConfime = document.getElementById('modaldescricaogettask')
+    taskId = buttonConfirme.getAttribute('data-task-id')
+    getTask(taskId)
+})
+
+
+//Botao de confirmacao - pega demanda
+
+document.getElementById('modalGetTaskConfirme').addEventListener('click', function(){
+    buttonConfirme = document.getElementById('modalGetTaskConfirme')
+    taskId = buttonConfirme.getAttribute('data-task-id')
+    getTask(taskId)
+})
+
 
 
 // Função para abrir detalhes da tarefa
@@ -112,9 +141,28 @@ async function TaskDetails(taskId) {
 }
 
 // Função para pegar tarefa
-function getTask(taskId) {
-    console.log("Pegando a tarefa com ID:", taskId);
-    // Aqui você pode adicionar a lógica para pegar a tarefa (atualizar o status, etc.)
+async function getTask(taskId) {
+    try {
+        const response = await fetch("/api/demandas/getDemande", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ tarefa_id: taskId, status_aprovacao: 'pendente' })
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar a descrição da tarefa');
+        }
+
+        const result = await response.json();
+        console.log(result)
+
+        return console.log("Tarefa demandada com sucesso!")
+
+    } catch (error) {
+        console.error('Erro ao buscar a descrição da tarefa:', error);
+    }
 }
 
 
