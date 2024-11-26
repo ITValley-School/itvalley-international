@@ -158,6 +158,22 @@ async function getTask(taskId) {
         const result = await response.json();
         console.log(result)
 
+        // Disparar a notificação de sucesso 
+        dmx.parse('notification.success("A tarefa foi solicitada com sucesso!")');
+
+        // Seleciona o modal pelo ID
+        const modal = document.getElementById('modalDescriptionTask');
+        const modaltask = document.getElementById('modalGetTask');
+
+        // Obtém a instância do modal do Bootstrap
+        const bootstrapModal = bootstrap.Modal.getInstance(modal);
+        const bootstrapModal2 = bootstrap.Modal.getInstance(modaltask)
+
+        // Fecha o modal
+        bootstrapModal.hide();
+        bootstrapModal2.hide();
+
+
         return console.log("Tarefa demandada com sucesso!")
 
     } catch (error) {

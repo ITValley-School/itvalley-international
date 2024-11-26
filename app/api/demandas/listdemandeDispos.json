@@ -25,114 +25,49 @@
       },
       {
         "name": "query",
-        "module": "dbconnector",
-        "action": "select",
+        "module": "dbupdater",
+        "action": "custom",
         "options": {
           "connection": "dbmasterclasse",
           "sql": {
-            "type": "select",
-            "columns": [
-              {
-                "table": "itv.tarefas",
-                "column": "id"
-              },
-              {
-                "table": "itv.tarefas",
-                "column": "nome"
-              },
-              {
-                "table": "itv.tarefas",
-                "column": "descricao"
-              },
-              {
-                "table": "itv.tarefas",
-                "column": "estimativa_horas"
-              },
-              {
-                "table": "itv.tarefas",
-                "column": "status"
-              },
-              {
-                "table": "itv.tarefas",
-                "column": "data_inicio"
-              }
-            ],
+            "query": "SELECT \n    [id], \n    [nome], \n    [descricao], \n    [estimativa_horas], \n    [status], \n    [data_inicio]\nFROM \n    [itv].[tarefas]\nWHERE \n    [itv].[tarefas].[usuario_id] <> @p0\n    AND [itv].[tarefas].[status] NOT IN (\n        SELECT [status_aprovacao]\n        FROM [itv].[tarefas_atribuidas]\n    );",
             "params": [
               {
-                "operator": "not_equal",
-                "type": "expression",
-                "name": ":P1",
+                "name": "@p0",
                 "value": "{{identity}}",
                 "test": ""
               }
-            ],
-            "table": {
-              "name": "itv.tarefas"
-            },
-            "primary": "id",
-            "joins": [],
-            "wheres": {
-              "condition": "AND",
-              "rules": [
-                {
-                  "id": "itv.tarefas.usuario_id",
-                  "field": "itv.tarefas.usuario_id",
-                  "type": "double",
-                  "operator": "not_equal",
-                  "value": "{{identity}}",
-                  "data": {
-                    "table": "itv.tarefas",
-                    "column": "usuario_id",
-                    "type": "number",
-                    "columnObj": {
-                      "type": "reference",
-                      "nullable": true,
-                      "references": "id",
-                      "inTable": "itv.usuarios",
-                      "referenceType": "integer",
-                      "onUpdate": "NO ACTION",
-                      "onDelete": "NO ACTION",
-                      "name": "usuario_id"
-                    }
-                  },
-                  "operation": "<>",
-                  "table": "itv.tarefas"
-                }
-              ],
-              "conditional": null,
-              "valid": true
-            },
-            "query": "select [id], [nome], [descricao], [estimativa_horas], [status], [data_inicio] from [itv].[tarefas] where [itv].[tarefas].[usuario_id] <> @p0"
+            ]
           }
         },
         "output": true,
         "meta": [
           {
-            "type": "number",
-            "name": "id"
+            "name": "id",
+            "type": "number"
           },
           {
-            "type": "text",
-            "name": "nome"
+            "name": "nome",
+            "type": "text"
           },
           {
-            "type": "text",
-            "name": "descricao"
+            "name": "descricao",
+            "type": "text"
           },
           {
-            "type": "number",
-            "name": "estimativa_horas"
+            "name": "estimativa_horas",
+            "type": "number"
           },
           {
-            "type": "text",
-            "name": "status"
+            "name": "status",
+            "type": "text"
           },
           {
-            "type": "date",
-            "name": "data_inicio"
+            "name": "data_inicio",
+            "type": "datetime"
           }
         ],
-        "outputType": "array"
+        "type": "dbcustom_query"
       }
     ]
   }

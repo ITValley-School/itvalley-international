@@ -25,51 +25,18 @@
     ]
   },
   "exec": {
-    "steps": [
-      {
-        "name": "identity",
-        "module": "auth",
-        "action": "login",
-        "options": {
-          "provider": "security_official",
-          "username": "{{$_POST.email}}",
-          "password": "{{$_POST.senha}}",
-          "remember": ""
-        },
-        "output": true,
-        "meta": []
+    "steps": {
+      "name": "identity",
+      "module": "auth",
+      "action": "login",
+      "options": {
+        "provider": "security_official",
+        "username": "{{$_POST.email}}",
+        "password": "{{$_POST.senha}}",
+        "remember": ""
       },
-      {
-        "name": "",
-        "module": "core",
-        "action": "condition",
-        "options": {
-          "if": "{{identity.logged_in}}",
-          "then": {
-            "steps": {
-              "name": "",
-              "module": "core",
-              "action": "response",
-              "options": {
-                "status": 200,
-                "data": "Logado com sucesso"
-              }
-            }
-          },
-          "else": {
-            "steps": {
-              "name": "",
-              "module": "core",
-              "action": "response",
-              "options": {
-                "status": 401,
-                "data": "Credenciais invalidas"
-              }
-            }
-          }
-        },
-        "outputType": "boolean"
-      }
-    ]
+      "output": true,
+      "meta": []
+    }
   }
 }

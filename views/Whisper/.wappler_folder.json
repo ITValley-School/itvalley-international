@@ -14,5 +14,9 @@
   "tts-openai.ejs": {
     "layoutPage": "telaprincipal",
     "description": ""
+  },
+  "teste.ejs": {
+    "layoutPage": "page-horizontal",
+    "description": ""
   }
 }
